@@ -1,5 +1,5 @@
- name: Node.js CI
-
+ name: Java-goof CI
+#
  on:
    push:
      branches: [ master ]
