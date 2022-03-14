@@ -2,7 +2,7 @@ FROM maven:3-jdk-8-slim as build
 
 RUN mkdir /usr/src/goof
 WORKDIR /usr/src/goof
-
+#
 COPY pom.xml pom.xml
 COPY src src
 COPY todolist-core todolist-core
