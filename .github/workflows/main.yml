@@ -22,7 +22,11 @@
        with:
          node-version: ${{ matrix.node-version }}
          cache: 'npm'
-     - run: npm install
-     - run: npm i -g snyk
-     - run: snyk auth ${{ secrets.SNYK_TOKEN }}
-     - run: snyk code test
+         
+   security:
+       runs-on: ubuntu-latest
+       steps:
+         - name: Run OX Security Scan to check for vulnerabilities
+           with:
+             ox_api_key: ${{ secrets.OX_API_KEY }}
+           uses: oxsecurity/ox-security-scan@main
